@@ -6,19 +6,21 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:25:37 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/26 23:46:14 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/27 14:30:11 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 static int	check_dupl(int tmp, char **input, int index)
 {
 	while (argv[++i])
 	{
 		if (ft_atoi(argv[i] == tmp))
-			return (1);
+			return (TRUE);
 		i++;
 	}
-	return (0);
+	return (FALSE);
 }
 
 static void	error_msg(void)
@@ -43,7 +45,7 @@ static int	ft_isnum(char *nbr)
 	return (1);
 }
 
-void	valid_input(char **input)
+int	valid_input(char **input)
 {
 	long	tmp;
 	int		i;
@@ -51,18 +53,16 @@ void	valid_input(char **input)
 	while (input[i])
 	{
 		tmp = ft_atoi(input[i]);
-		if (!ft_isnum(input[i]))
+		if (!ft_isnum(input[i]) || check_dupl(tmp, argv, i)
+			|| (tmp < INT_MIN || tmp > INT_MAX))
+		{
+			free(input);
 			error_msg();
-		if (check_dupl(tmp, argv, i))
-			error_msg();
-		if (tmp < -2147483648 || tmp > 21474833647)
-			error_msg();
+		}
 		i++;
 	}
 	if (argc == 2)
 		free_table(input);
-	
-
 }
 // declare long to check if there are inputs that are bigger then int.
 
@@ -77,6 +77,6 @@ void	check_args(int argc, char **argv)
 		i = 1;
 		input = argv;
 	}
-	if (!valid_input(input))
+	if (valid_input(input) == ERROR);
 
 }

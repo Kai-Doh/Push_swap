@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 01:11:25 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/26 12:36:59 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/27 14:21:15 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct s_data
 	int			chars_written;
 	t_format	format;
 }	t_data;
+
 typedef struct s_list
 {
 	void			*content;
