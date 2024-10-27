@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 14:03:24 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/27 15:17:21 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/27 18:08:56 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 typedef struct s_list
 {
-	void			*content;
+	int				*content;
 	int				index;
 	struct s_list	*previous;
 	struct s_list	*next;

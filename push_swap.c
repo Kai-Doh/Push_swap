@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:13:01 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/27 15:53:07 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/27 18:05:49 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ static void	init_stacks(int argc, char **argv, t_list **stack_a)
 	t_list	*new_stack;
 	char	**input;
 	int		i;
-	int		index;
 
 	i = 0;
 	if (argc == 2)
@@ -27,13 +26,14 @@ static void	init_stacks(int argc, char **argv, t_list **stack_a)
 		i = 1;
 		input = argv;
 	}
-	index = 0;
 	while (input[i])
 	{
 		new_stack = ft_lstnew(ft_atoi(input[i++]))
-		new_stack->index = index++;
 		ft_lstadd_back(stack_a, new_stack);
 	}
+	indexing_stack(stack_a);
+	if (argc == 2)
+		free(input)
 }
 
 int	main(int argc, char **argv)
