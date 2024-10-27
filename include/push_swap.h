@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 14:03:24 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/27 18:08:56 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/27 21:53:35 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,19 @@
 
 typedef struct s_list
 {
-	int				*content;
+	int				content;
 	int				index;
 	struct s_list	*previous;
 	struct s_list	*next;
 }	t_list;
+
+void	check_args(int argc, char **argv);
+void	error_msg(char *msg);
+void	indexing_stack(t_list **stack);
+t_list	*ft_lstnew(int content);
+int		ft_lstsize(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+t_list	*ft_lstlast(t_list *lst);
 
 #ENDIF

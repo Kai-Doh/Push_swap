@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:25:37 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/27 14:30:11 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/27 21:53:25 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ static int	check_dupl(int tmp, char **input, int index)
 	return (FALSE);
 }
 
-static void	error_msg(void)
+void	error_msg(char *msg)
 {
-	ft_putendl_fd("Error", 1);
+	ft_putendl_fd(&msg, 1);
 	exit (1);
 }
 
@@ -45,7 +45,7 @@ static int	ft_isnum(char *nbr)
 	return (1);
 }
 
-int	valid_input(char **input)
+static int	valid_input(char **input)
 {
 	long	tmp;
 	int		i;
@@ -57,7 +57,7 @@ int	valid_input(char **input)
 			|| (tmp < INT_MIN || tmp > INT_MAX))
 		{
 			free(input);
-			error_msg();
+			error_msg("Error");
 		}
 		i++;
 	}
