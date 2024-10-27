@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 14:03:24 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/27 21:53:35 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/27 22:14:11 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #DEFINE TRUE 1
 #DEFINE FALSE 0
 #DEFINE ERROR -1
+#DEFINE SUCCESS 0
 #DEFINE INT_MIN -2147483648
 #DEFINE INT_MAX 2147483647
 
