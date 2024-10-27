@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_args.c                                       :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 12:25:37 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/26 12:50:13 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/10/26 23:38:47 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/10/26 23:45:48 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	check_args(int argc, char **argv)
+void	free_table(char **input)
 {
-	if (argc == 2)
-		args = ft_split(argv[1], ' ');
-	else
+	int	i;
 
+	i = 0;
+	while (input[i])
+		i++;
+	while (i >= 0)
+		free(input[i--])
 }

@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:13:01 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/26 12:37:24 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/27 11:45:40 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@ int	main(int argc, char **argv)
 {
 	if (argc < 2)
 		return (-1);
-	check_args(arg c, argv)
+	check_args(arg c, argv);
 }
