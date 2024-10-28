@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 21:02:28 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/28 14:07:49 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/28 14:26:41 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ static int	swap(t_list **stack)
 		return (ERROR);
 	first = *stack;
 	next = first->next;
-	tmp_content = head->content;
-	tmp_index = head->index;
+	tmp_content = first->content;
+	tmp_index = first->index;
 	first->content = next->content;
 	first->index = next->index;
 	next->content = tmp_content;

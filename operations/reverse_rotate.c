@@ -6,13 +6,15 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 13:59:45 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/28 14:07:54 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/28 14:52:26 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int reverse_rotate(t_list stack)
+#include "push_swap.h"
+
+static int reverse_rotate(t_list **stack)
 {
-	if (!stack || !stack->next)
+	if (!*stack || !(*stack)->next)
 		return (ERROR);
 	*stack = (*stack)->previous;
 	return (SUCCESS);

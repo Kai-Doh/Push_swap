@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:13:01 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/28 14:12:38 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/28 16:44:56 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,31 @@ static void	init_stacks(int argc, char **argv, t_list **stack_a)
 	}
 	while (input[i])
 	{
-		new_stack = ft_lstnew(ft_atoi(input[i++]))
+		new_stack = ft_lstnew(ft_atoi(input[i++]));
 		ft_lstadd_back(stack_a, new_stack);
 	}
 	indexing_stack(stack_a);
 	if (argc == 2)
-		free(input)
+		free(input);
+}
+
+void free_stack(t_list *stack) {
+    t_list *tmp;
+
+    while (stack) {
+        tmp = stack;
+        stack = stack->next;
+        free(tmp);
+    }
+}
+
+void print_list(t_list *stack_a) {
+    t_list *current = stack_a;
+	int i = 0;
+    while (i++ < 5) {
+        printf("%d\n", current->content);
+        current = current->next;
+    }
 }
 
 int	main(int argc, char **argv)
@@ -43,8 +62,11 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (-1);
-	check_args(arg c, argv);
+	check_args(argc, argv);
 	stack_a = malloc(sizeof(t_list));
 	stack_b = malloc(sizeof(t_list));
 	init_stacks(argc, argv, stack_a);
+	print_list(*stack_a);
+	free_stack(*stack_a);
+	free_stack(*stack_b);
 }

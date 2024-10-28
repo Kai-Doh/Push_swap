@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 23:38:47 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/28 14:33:14 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/10/02 22:12:09 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/10/28 14:21:58 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_table(char **input)
+void	ft_putendl_fd(char *s, int fd)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (input[i])
+	while (s[i])
+	{
+		write(fd, &s[i], 1);
 		i++;
-	while (i >= 0)
-		free(input[i--]);
+	}
+	write(fd, "\n", 1);
 }
+/*
+int	main(void)
+{
+	ft_putendl_fd("Hello", 1);
+	return (0);
+}
+*/

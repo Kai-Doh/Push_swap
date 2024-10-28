@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 23:38:47 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/28 14:33:14 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/09/30 23:36:02 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/10/28 14:34:54 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_table(char **input)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int	i;
+	void	*ptr;
 
-	i = 0;
-	while (input[i])
-		i++;
-	while (i >= 0)
-		free(input[i--]);
+	ptr = malloc(nmemb * size);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, nmemb * size);
+	return (ptr);
 }
+/*
+int	main(void)
+{
+	char	*str;
+	size_t	nmemb = 10;
+	size_t	size = 1;
+
+	str = ft_calloc(nmemb, size);
+	printf("%s", str);
+}
+*/

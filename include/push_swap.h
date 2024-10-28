@@ -6,22 +6,23 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 14:03:24 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/28 14:10:37 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/28 14:34:19 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#IFNDEF PUSH_SWAP_H
-#DEFINE PUSH_SWAP_H
-#DEFINE TRUE 1
-#DEFINE FALSE 0
-#DEFINE ERROR -1
-#DEFINE SUCCESS 0
-#DEFINE INT_MIN -2147483648
-#DEFINE INT_MAX 2147483647
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+# define TRUE 1
+# define FALSE 0
+# define ERROR -1
+# define SUCCESS 0
+# define INT_MIN -2147483648
+# define INT_MAX 2147483647
 
-#INCLUDE <STDLIB.H>
-#INCLUDE <STDIO.H>
-#INCLUDE <STRING.H>
+# include <stdlib.h>
+# include <stdio.h>
+# include <string.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -31,9 +32,18 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+void	ft_bzero(void *s, size_t num);
+void	*ft_calloc(size_t nmemb, size_t size);
+int	ft_atoi(const char *str);
+int	ft_isdigit(int c);
+void	ft_putendl_fd(char *s, int fd);
+char	**ft_split(char const *s, char c);
+size_t	ft_strlcpy(char *dest, const char *src, size_t size);
+
 void	check_args(int argc, char **argv);
 void	error_msg(char *msg);
 void	indexing_stack(t_list **stack);
+void	free_table(char **input);
 t_list	*ft_lstnew(int content);
 int		ft_lstsize(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
@@ -49,4 +59,4 @@ int		sa(t_list **stack_a);
 int		sb(t_list **stack_b);
 int		ss(t_list **stack_a, t_list **stack_b);
 
-#ENDIF
+#endif

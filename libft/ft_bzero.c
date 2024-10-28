@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 23:38:47 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/28 14:33:14 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/09/29 02:39:38 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/10/28 14:34:46 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_table(char **input)
+void	ft_bzero(void *s, size_t num)
 {
-	int	i;
+	size_t	i;
+	char	*str;
 
 	i = 0;
-	while (input[i])
+	str = (char *)s;
+	while (i < num)
+	{
+		str[i] = '\0';
 		i++;
-	while (i >= 0)
-		free(input[i--]);
+	}
 }
+/*
+int	main(void)
+{
+	char str[10];
+
+	ft_bzero(str, 10);
+	printf("%s", str);
+}
+*/

@@ -1,24 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 23:38:47 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/28 14:33:14 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/09/30 20:39:22 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/10/28 14:22:15 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_table(char **input)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (input[i])
+	if (size > 0)
+	{
+		while (src[i] && i != (size - 1))
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
+	}
+	while (src[i])
 		i++;
-	while (i >= 0)
-		free(input[i--]);
+	return (i);
 }
+/*
+int	main(void)
+{
+	char dest[10];
+	char *src = "Hello.";
+k
+	printf("%lu", ft_strlcpy(dest, src, 10));
+}
+*/

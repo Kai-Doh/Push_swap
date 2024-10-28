@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:25:37 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/27 21:53:25 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/28 16:09:13 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,19 @@
 
 static int	check_dupl(int tmp, char **input, int index)
 {
-	while (argv[++i])
+	index++;
+	while (input[index])
 	{
-		if (ft_atoi(argv[i] == tmp))
+		if (ft_atoi(input[index]) == tmp)
 			return (TRUE);
-		i++;
+		index++;
 	}
 	return (FALSE);
 }
 
 void	error_msg(char *msg)
 {
-	ft_putendl_fd(&msg, 1);
+	ft_putendl_fd(msg, 1);
 	exit (1);
 }
 
@@ -45,15 +46,16 @@ static int	ft_isnum(char *nbr)
 	return (1);
 }
 
-static int	valid_input(char **input)
+static void	valid_input(char **input, int argc, int i)
 {
 	long	tmp;
-	int		i;
 
 	while (input[i])
 	{
+		if (input[i] == NULL)
+			printf("it is NULL");
 		tmp = ft_atoi(input[i]);
-		if (!ft_isnum(input[i]) || check_dupl(tmp, argv, i)
+		if (!ft_isnum(input[i]) || check_dupl(tmp, input, i)
 			|| (tmp < INT_MIN || tmp > INT_MAX))
 		{
 			free(input);
@@ -69,7 +71,9 @@ static int	valid_input(char **input)
 void	check_args(int argc, char **argv)
 {
 	char	**input;
+	int		i;
 
+	i = 0;
 	if (argc == 2)
 		input = ft_split(argv[1], ' ');
 	else
@@ -77,6 +81,5 @@ void	check_args(int argc, char **argv)
 		i = 1;
 		input = argv;
 	}
-	if (valid_input(input) == ERROR);
-
+	valid_input(input, argc, i);
 }
