@@ -6,13 +6,13 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 21:02:28 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/27 22:27:58 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/28 14:07:49 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	swap(t_list **stack)
+static int	swap(t_list **stack)
 {
 	t_list	*first;
 	t_list	*next;

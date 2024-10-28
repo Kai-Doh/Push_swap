@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 14:03:24 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/27 22:14:11 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/28 14:10:37 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,14 @@ int		ft_lstsize(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 t_list	*ft_lstlast(t_list *lst);
+int		pa(t_list **stack_a, t_list **stack_b);
+int		pb(t_list **stack_a, t_list **stack_b);
+int	 	ra(t_list **stack_a);
+int	 	rb(t_list **stack_b);
+int	 	rra(t_list **stack_a);
+int		rrb(t_list **stack_b);
+int		sa(t_list **stack_a);
+int		sb(t_list **stack_b);
+int		ss(t_list **stack_a, t_list **stack_b);
 
 #ENDIF

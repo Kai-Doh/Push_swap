@@ -6,13 +6,13 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 22:18:17 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/27 22:25:50 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/28 14:09:04 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	push(t_list **push_from, t_list **push_to)
+static int	push(t_list **push_from, t_list **push_to)
 {
 	t_list	*tmp;
 	t_list	*last_from;

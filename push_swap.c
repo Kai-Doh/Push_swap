@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:13:01 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/27 18:05:49 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/28 14:12:38 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,4 @@ int	main(int argc, char **argv)
 	stack_a = malloc(sizeof(t_list));
 	stack_b = malloc(sizeof(t_list));
 	init_stacks(argc, argv, stack_a);
-
 }
