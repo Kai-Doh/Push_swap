@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:13:01 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/28 16:44:56 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/30 11:05:54 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,21 @@ static void	init_stacks(int argc, char **argv, t_list **stack_a)
 		free(input);
 }
 
-void free_stack(t_list *stack) {
-    t_list *tmp;
+void free_stack(t_list **stack)
+{
+	t_list *tmp;
+	t_list *first;
 
-    while (stack) {
-        tmp = stack;
-        stack = stack->next;
-        free(tmp);
-    }
+	first = *stack;
+	if (first->previous != NULL)
+		first->previous->next = NULL;
+	while (first)
+	{
+		tmp = first;
+		first = first->next;
+		free(tmp);
+	}
+	free(stack);
 }
 
 void print_list(t_list *stack_a) {
@@ -64,9 +71,10 @@ int	main(int argc, char **argv)
 		return (-1);
 	check_args(argc, argv);
 	stack_a = malloc(sizeof(t_list));
+	*stack_a = NULL;
 	stack_b = malloc(sizeof(t_list));
 	init_stacks(argc, argv, stack_a);
 	print_list(*stack_a);
-	free_stack(*stack_a);
-	free_stack(*stack_b);
+	free_stack(stack_a);
+	free_stack(stack_b);
 }
