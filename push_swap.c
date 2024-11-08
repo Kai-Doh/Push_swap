@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:13:01 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/30 11:05:54 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/11/06 11:29:16 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	init_stacks(int argc, char **argv, t_list **stack_a)
 		free(input);
 }
 
-void free_stack(t_list **stack)
+static void free_stack(t_list **stack)
 {
 	t_list *tmp;
 	t_list *first;
@@ -53,13 +53,22 @@ void free_stack(t_list **stack)
 	free(stack);
 }
 
-void print_list(t_list *stack_a) {
+static void print_list(t_list *stack_a)
+{
     t_list *current = stack_a;
 	int i = 0;
     while (i++ < 5) {
         printf("%d\n", current->content);
         current = current->next;
     }
+}
+
+static void	check_sort(t_list **stack_a, t_list **stack_b)
+{
+	if (ft_lstsize(*stack_a) <= 5)
+		sort_small(stack_a, stack_b);
+	else
+		sort_big(stack_a, stack_b);
 }
 
 int	main(int argc, char **argv)
@@ -74,7 +83,14 @@ int	main(int argc, char **argv)
 	*stack_a = NULL;
 	stack_b = malloc(sizeof(t_list));
 	init_stacks(argc, argv, stack_a);
-	print_list(*stack_a);
+	if (check_sort(stack_a))
+	{
+		free_stack(stack_a);
+		free_stack(stack_b);
+		return (0);
+	}
+	sort_stack(stack_a, stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);
+	print_list(*stack_a);
 }
