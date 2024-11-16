@@ -43,6 +43,20 @@ static void	three_sort(t_list **stack_a)
 		sa(stack_a);
 		rra(stack_a);
 	}
+	else if (current->index == min_after)
+	{
+		if (head->next->index == min)
+			sa(stack_a);
+		else
+			rra(stack_a);
+	}
+	else
+		three_sort_2(stack_a);
+}
+
+static void	three_sort_2(t_list **stack_a)
+{
+	
 }
 
 void	sort_small(t_list **stack_a, t_list **stack_b)
