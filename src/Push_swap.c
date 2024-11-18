@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 11:52:38 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/11/18 05:07:22 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/11/18 05:39:43 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int ac, char **ag)
 	char		**args;
 
 	if (ac == 1)
-		return (0);
+		return (NO_ARG);
 	table = malloc(sizeof(t_stacks));
 	if (!table)
 		return (MALLOC_FAIL);
@@ -37,6 +37,10 @@ int	main(int ac, char **ag)
 	table->size_b = ft_lstsize(table->stack_b);
 	indexing(table->stack_a);
 	dispatcher(table);
+	if (ac == 2)
+		free_args(args);
+	free_table(table);
+	return (NO_ERROR);
 }
 
 static t_list	*init(char **ag, int ac)

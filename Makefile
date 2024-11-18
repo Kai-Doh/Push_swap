@@ -12,6 +12,7 @@ SRCS =	src/Push_swap.c\
 		src/Push_swap_3_5.c\
 		src/Push_swap_quick_sort.c\
 		src/Push_swap_index.c\
+		src/Push_swap_free.c\
 		libft/libft.a\
 		operations/Operation_Push.c\
 		operations/Operation_Reverse_rotate.c\

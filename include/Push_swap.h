@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 22:06:19 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/11/18 05:06:43 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/11/18 05:39:38 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # define FALSE 0
 # define INIT_FAIL 2
 # define MALLOC_FAIL 1
+# define NO_ARG 3
+# define NO_ERROR 0
 # include "../libft/libft.h"
 # include <limits.h>
 
@@ -45,6 +47,8 @@ t_list		*search_min(t_list **stack);
 t_list		*search_max(t_list **stack);
 int			check_stack_a(t_list **stack_a, int size_a);
 void		quick_sort_init(t_list **stack_a, t_list **stack_b, int size_a);
+void		free_args(char **args);
+void		free_table(t_stacks *table);
 
 void		pa(t_list **stack_a, t_list **stack_b);
 void		pb(t_list **stack_a, t_list **stack_b);
