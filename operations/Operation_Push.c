@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 01:36:55 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/11/18 03:00:26 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/11/18 04:10:17 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	pb(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*tmp_list;
 
-	if (!*stack_b)
+	if (!*stack_a)
 		return ;
 	tmp_list = (*stack_a)->next;
 	(*stack_a)->next = *stack_b;
