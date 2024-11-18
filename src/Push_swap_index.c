@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 02:12:40 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/11/18 02:57:57 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/11/18 05:06:58 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	indexing(t_list *stack_a)
 
 static int	smallest_number(t_list *stack_a)
 {
-	t_list	*tmp;
+	t_list		*tmp;
 	long int	min;
 
 	min = LONG_MAX;

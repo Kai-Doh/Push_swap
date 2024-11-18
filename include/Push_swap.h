@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 22:06:19 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/11/18 03:02:46 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/11/18 05:06:43 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ typedef struct s_ps_data
 
 typedef struct s_stacks
 {
-	t_list	*stack_a;
-	t_list	*stack_b;
+	t_list		*stack_a;
+	t_list		*stack_b;
 	int			size_a;
 	int			size_b;
 }	t_stacks;

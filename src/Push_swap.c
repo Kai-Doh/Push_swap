@@ -6,14 +6,14 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 11:52:38 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/11/18 04:46:22 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/11/18 05:07:22 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_swap.h"
 
 static t_list	*init(char **ag, int ac);
-static int			check_stack(t_list *lst, int n, char *nbr);
+static int		check_stack(t_list *lst, int n, char *nbr);
 
 int	main(int ac, char **ag)
 {
@@ -43,8 +43,8 @@ static t_list	*init(char **ag, int ac)
 {
 	t_list	*tmp;
 	t_list	*result;
-	int			i;
-	long		nb;
+	int		i;
+	long	nb;
 
 	if (ac == 2)
 		i = 0;
@@ -70,7 +70,7 @@ static t_list	*init(char **ag, int ac)
 static int	check_stack(t_list *lst, int n, char *nbr)
 {
 	t_list	*tmp;
-	int			i;
+	int		i;
 
 	tmp = lst;
 	i = 0;
