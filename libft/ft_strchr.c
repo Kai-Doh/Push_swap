@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 20:39:22 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/01 01:16:55 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/09/30 21:18:48 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/10/04 16:14:54 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	if (size > 0)
+	while (s[i])
 	{
-		while (src[i] && i != (size - 1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
-	}
-	while (src[i])
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
 		i++;
-	return (i);
+	}
+	if (s[i] == (char)c)
+		return ((char *)&s[i]);
+	return (NULL);
 }
 /*
+#include <stdio.h>
+#include <string.h>
 int	main(void)
 {
-	char dest[10];
-	char *src = "Hello.";
-k
-	printf("%lu", ft_strlcpy(dest, src, 10));
+	char	*str = "Hello";
+	char	c = 'l';
+
+	printf("%s\n", ft_strchr(str, c));
+	printf("%s\n", strchr(str, c));
 }
 */

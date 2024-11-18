@@ -6,11 +6,11 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 22:12:09 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/28 14:21:58 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:11:32 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {

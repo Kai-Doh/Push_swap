@@ -1,41 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 20:39:22 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/01 01:16:55 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/10/03 15:22:18 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/10/03 15:47:10 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+int	ft_lstsize(t_list *lst)
 {
-	size_t	i;
+	int	size;
 
-	i = 0;
-	if (size > 0)
+	size = 0;
+	while (lst)
 	{
-		while (src[i] && i != (size - 1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
+		lst = lst->next;
+		size++;
 	}
-	while (src[i])
-		i++;
-	return (i);
+	return (size);
 }
 /*
+#include <stdio.h>
 int	main(void)
 {
-	char dest[10];
-	char *src = "Hello.";
-k
-	printf("%lu", ft_strlcpy(dest, src, 10));
+	t_list	*lst;
+	t_list	*new;
+	t_list	*new2;
+
+	lst = ft_lstnew("Hello");
+	new = ft_lstnew("World");
+	new2 = ft_lstnew("42");
+	lst->next = new;
+	new->next = new2;
+	printf("%d\n", ft_lstsize(lst));
 }
 */

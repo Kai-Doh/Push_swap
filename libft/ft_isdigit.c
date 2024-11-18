@@ -6,11 +6,11 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 01:55:40 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/28 14:29:10 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/09/29 02:38:34 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {

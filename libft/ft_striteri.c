@@ -1,41 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 20:39:22 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/01 01:16:55 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/10/02 11:33:51 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/10/04 14:13:35 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	size_t	i;
 
+	if (!s || !f)
+		return ;
 	i = 0;
-	if (size > 0)
+	while (s[i])
 	{
-		while (src[i] && i != (size - 1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
-	}
-	while (src[i])
+		f(i, &s[i]);
 		i++;
-	return (i);
+	}
 }
 /*
+void	ft_toupper_char(unsigned int index, char *c)
+{
+    (void)index;
+    if (*c >= 'a' && *c <= 'z')
+        *c = *c - 32;
+}
+#include <stdio.h>
 int	main(void)
 {
-	char dest[10];
-	char *src = "Hello.";
-k
-	printf("%lu", ft_strlcpy(dest, src, 10));
+	char	str[] = "HellejsFDJEsjdFJESFJsjdfJAAJSDFsao";
+
+	ft_striteri(str, ft_toupper_char);
+	printf("%s\n", str);
+	return (0);
 }
 */

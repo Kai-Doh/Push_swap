@@ -1,41 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 20:39:22 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/01 01:16:55 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/09/29 02:44:15 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/10/04 16:08:50 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t num)
 {
 	size_t	i;
 
 	i = 0;
-	if (size > 0)
+	if (!dest && !src && num > 0)
+		return (NULL);
+	if (dest != src)
 	{
-		while (src[i] && i != (size - 1))
+		while (i < num)
 		{
-			dest[i] = src[i];
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 			i++;
 		}
-		dest[i] = '\0';
 	}
-	while (src[i])
-		i++;
-	return (i);
+	return (dest);
 }
 /*
+#include <stdio.h>
+#include <string.h>
 int	main(void)
 {
 	char dest[10];
 	char *src = "Hello.";
-k
-	printf("%lu", ft_strlcpy(dest, src, 10));
+
+	printf("%s\n", (char *)ft_memcpy(dest, src, 10));
+	printf("%s\n", (char *)memcpy(dest, src, 10));
 }
 */

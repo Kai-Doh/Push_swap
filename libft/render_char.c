@@ -1,41 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   render_char.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 20:39:22 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/01 01:16:55 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/10/10 02:57:05 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/10/13 16:12:18 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+void	ft_printf_char(t_data *data, int c)
 {
-	size_t	i;
+	int			width;
 
-	i = 0;
-	if (size > 0)
+	if (data->format.specifier == '%')
 	{
-		while (src[i] && i != (size - 1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
+		write_print(data, c);
+		return ;
 	}
-	while (src[i])
-		i++;
-	return (i);
+	width = data->format.width_value - 1;
+	if (width < 0)
+		width = 0;
+	if (width > 0)
+	{
+		if (data->format.left_justified)
+		{
+			write_print(data, c);
+			zero_space(data, width);
+		}
+		else
+		{
+			zero_space(data, width);
+			write_print(data, c);
+		}
+	}
+	else
+		write_print(data, c);
 }
-/*
-int	main(void)
-{
-	char dest[10];
-	char *src = "Hello.";
-k
-	printf("%lu", ft_strlcpy(dest, src, 10));
-}
-*/

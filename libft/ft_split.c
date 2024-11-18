@@ -6,11 +6,11 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:45:39 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/28 16:21:19 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:13:46 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
 static void	ft_free_tab(char **tab, size_t j)
 {

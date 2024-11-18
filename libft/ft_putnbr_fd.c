@@ -1,41 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 20:39:22 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/01 01:16:55 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/10/02 22:16:05 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/10/04 16:12:19 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
+	char	c;
+	long	nb;
 
-	i = 0;
-	if (size > 0)
+	nb = n;
+	if (nb == -2147483648)
 	{
-		while (src[i] && i != (size - 1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
+		write(fd, "-2147483648", 11);
+		return ;
 	}
-	while (src[i])
-		i++;
-	return (i);
+	if (nb < 0)
+	{
+		write(fd, "-", 1);
+		nb = -n;
+	}
+	if (nb > 9)
+		ft_putnbr_fd(nb / 10, fd);
+	c = (char)((nb % 10) + '0');
+	write (fd, &c, 1);
 }
 /*
 int	main(void)
 {
-	char dest[10];
-	char *src = "Hello.";
-k
-	printf("%lu", ft_strlcpy(dest, src, 10));
+	ft_putnbr_fd(2147483647, 1);
+	return (0);
 }
 */

@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   Push_swap_dispatch.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 20:39:22 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/01 01:16:55 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/11/17 22:24:48 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/11/18 03:15:37 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "Push_swap.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+void	dispatcher(t_stacks	*stk)
 {
-	size_t	i;
+	int	length;
 
-	i = 0;
-	if (size > 0)
+	length = ft_lstsize(stk->stack_a);
+	if (check_sort(&stk->stack_a))
+		return ;
+	if (length == 2)
 	{
-		while (src[i] && i != (size - 1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
+		if (stk->stack_a->number > stk->stack_a->next->number)
+			sa(&stk->stack_a);
 	}
-	while (src[i])
-		i++;
-	return (i);
+	else if (length == 3)
+		three_sort(stk);
+	else if (length == 5)
+		five_sort(stk);
+	else
+		quick_sort_init(&stk->stack_a, &stk->stack_b, ft_lstsize(stk->stack_a));
 }
-/*
-int	main(void)
-{
-	char dest[10];
-	char *src = "Hello.";
-k
-	printf("%lu", ft_strlcpy(dest, src, 10));
-}
-*/

@@ -6,11 +6,11 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 23:26:21 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/28 15:41:08 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/04 15:56:07 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
